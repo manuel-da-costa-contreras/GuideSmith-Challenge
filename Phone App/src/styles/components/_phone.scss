@@ -1,0 +1,28 @@
+.wrapper {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 $m-size;
+}
+
+.container {
+  background: $light-blue;
+  margin-bottom: $s-size;
+}
+
+.header {
+  color: $pure-white;
+  margin-bottom: $m-size;
+  padding: $m-size 0;
+}
+
+.header__title {
+  font-size: $l-size;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
+}

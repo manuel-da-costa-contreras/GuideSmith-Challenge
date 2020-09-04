@@ -1,0 +1,34 @@
+.phone-card {
+  color: $off-white;
+  padding: $m-size;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-bottom: 0.1rem solid darken($light-blue, 10%);
+  transition: background 200ms ease-in-out;
+}
+
+.phone-card > img {
+  width: 6rem;
+}
+
+.phone-card:hover {
+  background: $blue;
+}
+
+.phone-card__title {
+  margin: 0;
+  width: 8rem;
+  word-break: break-word;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .phone-card > img {
+    width: 8rem;
+  }
+
+  .phone-card__title {
+    width: 12rem;
+  }
+}

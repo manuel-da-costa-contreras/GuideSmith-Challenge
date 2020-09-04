@@ -1,0 +1,82 @@
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal {
+  background: $light-blue;
+  color: $pure-white;
+  max-width: 32rem;
+  outline: none;
+  padding: $s-size;
+  text-align: left;
+  display: flex;
+}
+
+.modal > img {
+  height: 14rem;
+  margin: auto 0;
+  padding: 0 $s-size;
+}
+
+.modal-detail-container {
+  max-height: 23rem;
+  overflow-y: auto;
+  padding-right: 1.2rem;
+  border: none;
+  border-right: 0.3rem solid $dark-blue;
+}
+
+.modal-detail-container > div > p {
+  margin: 0;
+  padding: 0.8rem 0;
+}
+
+.modal-detail-container > div > p:first-child {
+  padding: 0 0 0.8rem 0;
+}
+.modal-detail-container > div > p:last-child {
+  padding: 0.8rem 0 0 0;
+}
+
+.modal__title {
+  margin: 0 0 $m-size 0;
+}
+
+.modal__body {
+  font-size: 2rem;
+  margin: 0 0 $l-size 0;
+  word-break: break-all;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .modal {
+    max-width: 70rem;
+    padding: $l-size;
+  }
+
+  .modal > img {
+    height: 28rem;
+    margin: auto 0;
+    padding: 0 $m-size;
+  }
+
+  .modal-detail-container {
+    max-height: none;
+    overflow-y: auto;
+  }
+}
