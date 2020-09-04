@@ -11,6 +11,9 @@ node_modules
 # Visual Studio Code user files
 settings.json
 
+# Build generated files
+public/scripts
+
 # Coverage generated files
 coverage
 
