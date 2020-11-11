@@ -10,18 +10,9 @@ import { State } from 'src/models/State';
 import { setPhoneList, setLoadingAction } from '../../actions/appState.actions';
 import PhoneCardList from '../phone-list/phone-list';
 import PhoneModalDetails from '../phone-modal-details/phone-modal-details';
+import { MainProps } from './phone-props';
 
-// Loader Override Css
-const override = `
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  `;
-
-export function CatalogueApp(): ReactElement {
+export function CatalogueApp(props: MainProps): ReactElement {
   const [selectedPhone, setSelectedPhone] = useState<Phone[]>(undefined);
   const { phones, loading } = useSelector((state: State) => state.appState);
   const dispatch = useDispatch();
@@ -67,14 +58,16 @@ export function CatalogueApp(): ReactElement {
   // Early Return
   if (loading) {
     return (
-      <Loader size={15} color={'#1B80DB'} loading={loading} css={override} />
+      <div className="loader__override">
+        <Loader size={15} loading={loading} />
+      </div>
     );
   }
 
   return (
     <div className="wrapper">
       <div className="header">
-        <h1 className="header__title">Phone Catalogue</h1>
+        <h1 className="header__title">{props.headerTitle}</h1>
       </div>
       <div className="container">
         {phones.map((phone: any) => (
@@ -90,3 +83,7 @@ export function CatalogueApp(): ReactElement {
     </div>
   );
 }
+
+CatalogueApp.defaultProps = {
+  headerTitle: 'Phone Catalogue',
+};

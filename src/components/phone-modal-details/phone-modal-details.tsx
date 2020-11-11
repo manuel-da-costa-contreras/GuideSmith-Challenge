@@ -31,39 +31,39 @@ const PhoneModalDetails = (props: PhoneModalDetailsProps): ReactElement => {
                   props.selectedPhone.description}
               </p>
               <p>
-                Color:{' '}
+                {props.colorTitle}
                 <span>
                   {props.selectedPhone.color && props.selectedPhone.color}
                 </span>
               </p>
               <p>
-                Manufacturer:{' '}
+                {props.manufacturerTitle}
                 <span>
                   {props.selectedPhone.manufacturer &&
                     props.selectedPhone.manufacturer}
                 </span>
               </p>
               <p>
-                Price:{' '}
+                {props.priceTitle}
                 <span>
                   {props.selectedPhone.price && props.selectedPhone.price}€
                 </span>
               </p>
               <p>
-                Processor:{' '}
+                {props.processorTitle}
                 <span>
                   {props.selectedPhone.processor &&
                     props.selectedPhone.processor}
                 </span>
               </p>
               <p>
-                Memory Ram:{' '}
+                {props.memoryRamTitle}
                 <span>
                   {props.selectedPhone.ram && props.selectedPhone.ram}Gb
                 </span>
               </p>
               <p>
-                Screen Size:{' '}
+                {props.screenSizeTitle}
                 <span>
                   {props.selectedPhone.screen && props.selectedPhone.screen}
                 </span>
@@ -75,6 +75,15 @@ const PhoneModalDetails = (props: PhoneModalDetailsProps): ReactElement => {
       )}
     </Modal>
   );
+};
+
+PhoneModalDetails.defaultProps = {
+  colorTitle: 'Color:',
+  manufacturerTitle: 'Manufacturer:',
+  priceTitle: 'Price:',
+  processorTitle: 'Processor:',
+  memoryRamTitle: 'Memory Ram:',
+  screenSizeTitle: 'Screen Size:',
 };
 
 export { PhoneModalDetails as default };
