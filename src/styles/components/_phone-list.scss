@@ -21,6 +21,9 @@
   margin: 0;
   width: 8rem;
   word-break: break-word;
+  & > span {
+    margin-left: 0.6rem;
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {
